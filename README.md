@@ -1,42 +1,32 @@
-AI-First HCP CRM (LangGraph + FastAPI + React)
-
-This project is an AI-powered HCP (Healthcare Professional) interaction logging system.
+This project is an AI-powered HCP (Healthcare Professional) interaction logging system based on the assignment specification.
 
 Features
+Two-panel UI:
+Left: Structured CRM Form
+Right: AI Assistant (Natural Language Input)
 
-Conversational AI input (Right Panel)
+LangGraph Agent with 5 Tools:
+Log Interaction
+Edit Interaction
+Summarize Interaction
+Follow-up Suggestion
+Recommendation
 
-Structured CRM form auto-filled from AI (Left Panel)
-
-Doctor, Product, Sentiment, Summary extraction
-
+Automatic extraction of:
+Doctor Name
+Product
+Sentiment
+Summary
 Save interaction using FastAPI backend
-
-LangGraph-based agent with tool routing (mock)
-
+View stored interactions (mock database)
 
 Tech Stack
-
 Frontend: React (Vite)
-
 Backend: FastAPI
-
 AI Orchestration: LangGraph
+Storage: In-memory (for demo)
 
-Storage: In-memory (mock database)
-
-
-How it Works
-
-User enters meeting details in AI Assistant.
-
-Backend agent extracts key entities.
-
-Form is auto-filled with structured data.
-
-Interaction is saved via API.
-
-Run Locally
+How to Run
 Backend
 cd backend
 python -m uvicorn main:app --reload
