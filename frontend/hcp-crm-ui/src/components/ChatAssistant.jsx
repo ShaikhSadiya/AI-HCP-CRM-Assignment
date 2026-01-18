@@ -16,7 +16,7 @@ function ChatAssistant({ setAiData }) {
       setResponse(data);
       setAiData(data);
     } catch (err) {
-      alert("Backend not running. Start FastAPI.");
+      alert("Backend not running. Please start FastAPI.");
     }
   };
 
@@ -29,12 +29,17 @@ function ChatAssistant({ setAiData }) {
       />
 
       <br /><br />
+
       <button onClick={sendToAI}>Send to AI</button>
 
       {response && (
-        <div>
+        <div style={{ marginTop: "15px" }}>
           <p><b>Tool Used:</b> {response.tool}</p>
-          <p><b>Result:</b> {response.action || response.summary || response.suggestion || response.recommendation}</p>
+
+          {response.action && <p><b>Result:</b> {response.action}</p>}
+          {response.summary && <p><b>Summary:</b> {response.summary}</p>}
+          {response.suggestion && <p><b>Follow-up:</b> {response.suggestion}</p>}
+          {response.recommendation && <p><b>Recommendation:</b> {response.recommendation}</p>}
         </div>
       )}
     </div>
