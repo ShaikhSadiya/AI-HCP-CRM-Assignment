@@ -26,7 +26,8 @@ def read_root():
 @app.post("/chat")
 def chat_with_ai(request: ChatRequest):
     result = run_agent(request.message)
-    return {"extracted_data": result}
+    return result  # return directly
+
 
 
 @app.post("/save_interaction")
